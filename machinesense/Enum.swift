@@ -11,8 +11,8 @@ import UIKit
 enum CategoryType: Int {
     case SelectPhoto = 0
     case TakePhoto = 1
-    case VideoTracking = 2
-    case FindObject = 3
+    case ObjectTracking = 2
+    case ObjectDetection = 3
     case `default` = 4
     
     var localDescription: String {
@@ -21,10 +21,10 @@ enum CategoryType: Int {
             return "Select Photo"
         case .TakePhoto:
             return "Take Photo"
-        case .VideoTracking:
-            return "Video Tracking"
-        case .FindObject:
-            return "Find Object"
+        case .ObjectTracking:
+            return "Object Tracking"
+        case .ObjectDetection:
+            return "Object Detection"
         default:
             return ""
         }
@@ -36,9 +36,9 @@ enum CategoryType: Int {
             return UIColor(red: 0/255, green: 84/255, blue: 146/255, alpha: 1)
         case .TakePhoto:
             return UIColor(red: 2/255, green: 106/255, blue: 107/255, alpha: 1)
-        case .VideoTracking:
+        case .ObjectTracking:
             return UIColor(red: 238/255, green: 61/255, blue: 60/255, alpha: 1)
-        case .FindObject:
+        case .ObjectDetection:
             return UIColor(red: 253/255, green: 154/255, blue: 34/255, alpha: 1)
         default:
             return UIColor.white
