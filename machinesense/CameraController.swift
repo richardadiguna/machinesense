@@ -21,9 +21,11 @@ class CameraController: NSObject {
     var rearCameraInput: AVCaptureDeviceInput?
     
     var photoOutput: AVCapturePhotoOutput?
+    var videoOutput: AVCaptureVideoDataOutput?
     var previewLayer: AVCaptureVideoPreviewLayer?
     
     var photoCaptureCompletionBlock: ((Data?, Error?) -> Void)?
+    var videoCaptureCompletionBlock: ((CVPixelBuffer?, Error?) -> Void)?
     
     func createCaptureSession() {
         captureSession = AVCaptureSession()
@@ -98,6 +100,14 @@ class CameraController: NSObject {
         captureSession.startRunning()
     }
     
+    func configureVideoOutput() throws {
+        guard let captureSession = captureSession else { throw CameraControllerError.captureSessionIsMissing }
+        
+        videoOutput = AVCaptureVideoDataOutput()
+        videoOutput?.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
+        captureSession.addOutput(videoOutput!)
+    }
+    
     func prepare(completionHandler: @escaping (Error?)->Void) {
         DispatchQueue(label: "prepare").sync {
             do {
@@ -105,6 +115,7 @@ class CameraController: NSObject {
                 createCaptureSession()
                 try configureCaptureDevices()
                 try configureDeviceInputs()
+                try configureVideoOutput()
                 try configurePhotoOutput()
             } catch {
                 DispatchQueue.main.async {
@@ -128,8 +139,8 @@ class CameraController: NSObject {
         previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspect
         previewLayer?.connection?.videoOrientation = .portrait
         
-        view.layer.insertSublayer(previewLayer!, at: 0)
-        previewLayer?.frame = superView.frame
+        view.layer.insertSublayer(self.previewLayer!, at: 0)
+        self.previewLayer?.frame = superView.frame
     }
     
     func captureImage(completion: @escaping (Data?, Error?) -> Void) {
@@ -141,6 +152,14 @@ class CameraController: NSObject {
         let settings = AVCapturePhotoSettings()
         photoOutput?.capturePhoto(with: settings, delegate: self)
         photoCaptureCompletionBlock = completion
+    }
+    
+    func captureVideo(completion: @escaping (CVPixelBuffer?, Error?)->Void) {
+        guard let captureSession = captureSession, captureSession.isRunning else {
+            completion(nil, CameraControllerError.captureSessionIsMissing)
+            return
+        }
+        videoCaptureCompletionBlock = completion
     }
     
     func switchToFrontCamera() throws {
@@ -226,4 +245,13 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
             photoCaptureCompletionBlock?(nil, CameraControllerError.unknown)
         }
     }
+}
+
+extension CameraController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
+        videoCaptureCompletionBlock?(pixelBuffer, nil)
+    }
+    
 }
