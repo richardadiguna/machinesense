@@ -14,6 +14,8 @@
 		B93E474F1FF204A800A6C44B /* RealTimeRecogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93E474E1FF204A800A6C44B /* RealTimeRecogViewController.swift */; };
 		B987E9741FECE9430047D3A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B987E9731FECE9430047D3A4 /* GoogleService-Info.plist */; };
 		B99488251FF1444B00FACF64 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B99488241FF1444B00FACF64 /* MobileNet.mlmodel */; };
+		B99542891FF4ADAE00B0358D /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99542881FF4ADAE00B0358D /* ObjectDetectionViewController.swift */; };
+		B995428B1FF4D02000B0358D /* ObjectTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B995428A1FF4D02000B0358D /* ObjectTrackingViewController.swift */; };
 		B99618291FECCEF100BFC7C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99618281FECCEF100BFC7C6 /* AppDelegate.swift */; };
 		B996182B1FECCEF100BFC7C6 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B996182A1FECCEF100BFC7C6 /* SplashViewController.swift */; };
 		B996182E1FECCEF100BFC7C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B996182C1FECCEF100BFC7C6 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		B93E474E1FF204A800A6C44B /* RealTimeRecogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeRecogViewController.swift; sourceTree = "<group>"; };
 		B987E9731FECE9430047D3A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B99488241FF1444B00FACF64 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		B99542881FF4ADAE00B0358D /* ObjectDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewController.swift; sourceTree = "<group>"; };
+		B995428A1FF4D02000B0358D /* ObjectTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectTrackingViewController.swift; sourceTree = "<group>"; };
 		B99618251FECCEF100BFC7C6 /* machinesense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = machinesense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99618281FECCEF100BFC7C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B996182A1FECCEF100BFC7C6 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -129,9 +133,11 @@
 				B9DD013A1FECEAC6006E4B34 /* User.swift */,
 				B9C8420C1FF0F97A0031E99D /* HomeCategory.swift */,
 				B914326A1FF161AC00B81275 /* CameraController.swift */,
-				B9F228D71FF25C3A00EA9394 /* CapturedImageViewController.swift */,
 				B9D9BE251FF11B030030E291 /* HistoryViewController.swift */,
 				B9D9BE271FF11B0F0030E291 /* UserViewController.swift */,
+				B99542881FF4ADAE00B0358D /* ObjectDetectionViewController.swift */,
+				B995428A1FF4D02000B0358D /* ObjectTrackingViewController.swift */,
+				B9F228D71FF25C3A00EA9394 /* CapturedImageViewController.swift */,
 				B99CE9CA1FF39C8800E080F9 /* SelectPhotoViewController.swift */,
 				B9C842101FF0FD8C0031E99D /* TakePhotoViewController.swift */,
 				B92519281FEFC23000928241 /* HomeViewController.swift */,
@@ -315,8 +321,10 @@
 			files = (
 				B9C842091FF0E5250031E99D /* Global.swift in Sources */,
 				B9DD013F1FECF259006E4B34 /* Extension.swift in Sources */,
+				B995428B1FF4D02000B0358D /* ObjectTrackingViewController.swift in Sources */,
 				B9D9BE281FF11B0F0030E291 /* UserViewController.swift in Sources */,
 				B9F228D81FF25C3A00EA9394 /* CapturedImageViewController.swift in Sources */,
+				B99542891FF4ADAE00B0358D /* ObjectDetectionViewController.swift in Sources */,
 				B925192B1FEFC27200928241 /* HomeCell.swift in Sources */,
 				B9D9BE261FF11B030030E291 /* HistoryViewController.swift in Sources */,
 				B9DD013D1FECF1CC006E4B34 /* CustomProtocol.swift in Sources */,

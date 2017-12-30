@@ -572,7 +572,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="159" height="259"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWL-ED-LDk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWL-ED-LDk">
                                                     <rect key="frame" x="20" y="60" width="119" height="140"/>
                                                     <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -609,6 +609,8 @@
                         <outlet property="collectionView" destination="Oa7-az-BFs" id="fsJ-9i-LCl"/>
                         <segue destination="pzv-8l-HL4" kind="presentation" identifier="goToTakePhoto" id="5Tv-5d-1a3"/>
                         <segue destination="bcu-VN-mwo" kind="show" identifier="goToSelectPhoto" id="rEV-89-4D4"/>
+                        <segue destination="G3A-Ya-I3E" kind="show" identifier="goToObjectDetection" id="bP6-bn-gPR"/>
+                        <segue destination="Nvr-d3-Qr7" kind="presentation" identifier="goToObjectTracking" id="oCb-gA-XGu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Koh-UC-2GV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -717,20 +719,101 @@
             </objects>
             <point key="canvasLocation" x="3396" y="150"/>
         </scene>
-        <!--View Controller-->
+        <!--Object Detection View Controller-->
         <scene sceneID="Uv5-pY-qiD">
             <objects>
-                <viewController id="G3A-Ya-I3E" sceneMemberID="viewController">
+                <viewController id="G3A-Ya-I3E" customClass="ObjectDetectionViewController" customModule="machinesense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1BJ-iH-RYa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNG-rl-oVo">
+                                <rect key="frame" x="16" y="459" width="288" height="40"/>
+                                <color key="backgroundColor" red="0.001496839337" green="0.32770067450000001" blue="0.57268995050000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mgX-k6-1aX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdV-yG-t7b">
+                                <rect key="frame" x="16" y="411" width="288" height="40"/>
+                                <color key="backgroundColor" red="0.0086472686379999997" green="0.41647762059999999" blue="0.41786670679999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ak6-9c-5AD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
+                                <state key="normal" title="Select Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPhotoAction:" destination="G3A-Ya-I3E" eventType="touchUpInside" id="6aa-TW-6jD"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A4o-34-Lgn">
+                                <rect key="frame" x="0.0" y="64" width="320" height="291"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HsU-Ad-GhO">
+                                <rect key="frame" x="16" y="363" width="288" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVf-rH-jJF">
+                                        <rect key="frame" x="54" y="10" width="234" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="yr8-Z6-YmO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2v-Xs-eVd">
+                                        <rect key="frame" x="0.0" y="10" width="46" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="TO2-o0-MSD"/>
+                                            <constraint firstAttribute="height" constant="21" id="fRs-28-DgU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="k2v-Xs-eVd" firstAttribute="leading" secondItem="HsU-Ad-GhO" secondAttribute="leading" id="3IB-sv-sI4"/>
+                                    <constraint firstItem="GVf-rH-jJF" firstAttribute="leading" secondItem="k2v-Xs-eVd" secondAttribute="trailing" constant="8" id="9Tp-OS-DeJ"/>
+                                    <constraint firstItem="GVf-rH-jJF" firstAttribute="top" secondItem="HsU-Ad-GhO" secondAttribute="top" constant="10" id="cge-UF-URU"/>
+                                    <constraint firstItem="k2v-Xs-eVd" firstAttribute="top" secondItem="HsU-Ad-GhO" secondAttribute="top" constant="10" id="hWf-hE-6ca"/>
+                                    <constraint firstAttribute="trailing" secondItem="GVf-rH-jJF" secondAttribute="trailing" id="wnq-Rf-iaL"/>
+                                    <constraint firstAttribute="height" constant="40" id="xh4-og-AWI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LdV-yG-t7b" firstAttribute="leading" secondItem="jN4-dU-83D" secondAttribute="leading" constant="16" id="7BO-hB-IJL"/>
+                            <constraint firstItem="FNG-rl-oVo" firstAttribute="leading" secondItem="jN4-dU-83D" secondAttribute="leading" constant="16" id="GIK-Qb-vLd"/>
+                            <constraint firstItem="A4o-34-Lgn" firstAttribute="leading" secondItem="jN4-dU-83D" secondAttribute="leading" id="JLT-wh-Lfa"/>
+                            <constraint firstItem="jN4-dU-83D" firstAttribute="bottom" secondItem="FNG-rl-oVo" secondAttribute="bottom" constant="20" id="TMv-jJ-xp1"/>
+                            <constraint firstItem="jN4-dU-83D" firstAttribute="trailing" secondItem="LdV-yG-t7b" secondAttribute="trailing" constant="16" id="UcX-Kl-8Uk"/>
+                            <constraint firstItem="A4o-34-Lgn" firstAttribute="top" secondItem="jN4-dU-83D" secondAttribute="top" id="VGx-HN-j33"/>
+                            <constraint firstItem="jN4-dU-83D" firstAttribute="trailing" secondItem="HsU-Ad-GhO" secondAttribute="trailing" constant="16" id="VkL-gm-oVR"/>
+                            <constraint firstItem="LdV-yG-t7b" firstAttribute="top" secondItem="HsU-Ad-GhO" secondAttribute="bottom" constant="8" id="YQQ-0Z-2AK"/>
+                            <constraint firstItem="HsU-Ad-GhO" firstAttribute="leading" secondItem="jN4-dU-83D" secondAttribute="leading" constant="16" id="cj0-TT-sEj"/>
+                            <constraint firstItem="FNG-rl-oVo" firstAttribute="top" secondItem="LdV-yG-t7b" secondAttribute="bottom" constant="8" id="fRb-PV-5e3"/>
+                            <constraint firstItem="jN4-dU-83D" firstAttribute="trailing" secondItem="FNG-rl-oVo" secondAttribute="trailing" constant="16" id="hfN-ln-ouJ"/>
+                            <constraint firstItem="A4o-34-Lgn" firstAttribute="trailing" secondItem="jN4-dU-83D" secondAttribute="trailing" id="ioe-g9-6De"/>
+                            <constraint firstItem="HsU-Ad-GhO" firstAttribute="top" secondItem="A4o-34-Lgn" secondAttribute="bottom" constant="8" id="o1n-aI-mva"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jN4-dU-83D"/>
                     </view>
+                    <connections>
+                        <outlet property="capturedPhotoImageView" destination="A4o-34-Lgn" id="c2n-TR-Itd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8a-Cm-HDI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4215" y="-228"/>
+            <point key="canvasLocation" x="4213" y="150"/>
         </scene>
         <!--Select Photo View Controller-->
         <scene sceneID="xir-Qd-JPy">
@@ -993,6 +1076,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jov-6r-xhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3396" y="961"/>
+        </scene>
+        <!--Object Tracking View Controller-->
+        <scene sceneID="XfW-AF-Ia5">
+            <objects>
+                <viewController id="Nvr-d3-Qr7" customClass="ObjectTrackingViewController" customModule="machinesense" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P1F-dC-d59">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6D-kB-Moe">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ok7-X2-L2G">
+                                        <rect key="frame" x="16" y="15" width="38" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="38" id="PQg-vh-xyg"/>
+                                            <constraint firstAttribute="height" constant="30" id="g4G-X9-Ey8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="15"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backAction:" destination="Nvr-d3-Qr7" eventType="touchUpInside" id="VmF-rA-bGa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.89009910821914673" green="0.89025193452835083" blue="0.89008945226669312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ok7-X2-L2G" firstAttribute="top" secondItem="U6D-kB-Moe" secondAttribute="top" constant="15" id="Ac5-cI-3AL"/>
+                                    <constraint firstItem="Ok7-X2-L2G" firstAttribute="leading" secondItem="U6D-kB-Moe" secondAttribute="leading" constant="16" id="oK9-dD-ijI"/>
+                                    <constraint firstAttribute="height" constant="60" id="tPE-qa-1dB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3p1-9S-6EE">
+                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGt-Kq-2XZ">
+                                        <rect key="frame" x="268" y="32" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="Bsj-fI-8R3"/>
+                                            <constraint firstAttribute="height" constant="44" id="Tox-fh-X5C"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="Rear Camera Icon"/>
+                                        <connections>
+                                            <action selector="switchCameraAction:" destination="Nvr-d3-Qr7" eventType="touchUpInside" id="1ao-Oi-qfP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHb-gy-Op5">
+                                        <rect key="frame" x="133" y="420" width="55" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="7RR-Zo-Osq"/>
+                                            <constraint firstAttribute="width" constant="55" id="dUt-TH-L8U"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="captureImageAction:" destination="pzv-8l-HL4" eventType="touchUpInside" id="iW8-CJ-iu4"/>
+                                            <action selector="shutterButtonAction:" destination="Nvr-d3-Qr7" eventType="touchUpInside" id="tMc-Sr-AuA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40779560804367065" green="0.40787053108215332" blue="0.40779092907905579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OGt-Kq-2XZ" secondAttribute="trailing" constant="8" id="DxG-L8-KHA"/>
+                                    <constraint firstItem="HHb-gy-Op5" firstAttribute="centerX" secondItem="3p1-9S-6EE" secondAttribute="centerX" id="TyC-Xg-7kC"/>
+                                    <constraint firstItem="OGt-Kq-2XZ" firstAttribute="top" secondItem="3p1-9S-6EE" secondAttribute="top" constant="32" id="XmI-lQ-R2E"/>
+                                    <constraint firstAttribute="bottom" secondItem="HHb-gy-Op5" secondAttribute="bottom" constant="33" id="jsP-lF-dk5"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U6D-kB-Moe" firstAttribute="top" secondItem="P1F-dC-d59" secondAttribute="top" id="4ap-tn-i1L"/>
+                            <constraint firstItem="U6D-kB-Moe" firstAttribute="leading" secondItem="mYu-TI-aqD" secondAttribute="leading" id="L4q-qi-G8U"/>
+                            <constraint firstItem="3p1-9S-6EE" firstAttribute="trailing" secondItem="mYu-TI-aqD" secondAttribute="trailing" id="Zim-M8-3bO"/>
+                            <constraint firstItem="U6D-kB-Moe" firstAttribute="trailing" secondItem="mYu-TI-aqD" secondAttribute="trailing" id="a9L-OA-vqu"/>
+                            <constraint firstItem="3p1-9S-6EE" firstAttribute="top" secondItem="U6D-kB-Moe" secondAttribute="bottom" id="bmV-ci-qtr"/>
+                            <constraint firstItem="3p1-9S-6EE" firstAttribute="bottom" secondItem="mYu-TI-aqD" secondAttribute="bottom" id="dLt-tW-36j"/>
+                            <constraint firstItem="3p1-9S-6EE" firstAttribute="leading" secondItem="mYu-TI-aqD" secondAttribute="leading" id="jjF-ni-tq6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mYu-TI-aqD"/>
+                    </view>
+                    <connections>
+                        <outlet property="capturePreviewView" destination="3p1-9S-6EE" id="zXW-CQ-AeK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="auS-1X-z9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4209.375" y="-641.19718309859161"/>
         </scene>
         <!--Home-->
         <scene sceneID="T5R-Ef-yMY">
