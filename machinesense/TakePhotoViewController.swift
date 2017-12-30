@@ -18,9 +18,7 @@ class TakePhotoViewController: UIViewController, AVCaptureVideoDataOutputSampleB
     @IBOutlet weak var captureButton: UIButton!
 
     let cameraController = CameraController()
-    
-    
-    
+
     var capturedData: Data?
     var resultIdentifier: String?
     var resultConfidence: VNConfidence?

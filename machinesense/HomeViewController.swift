@@ -63,9 +63,9 @@ extension HomeViewController: UICollectionViewDelegate {
         case 1:
             performSegue(withIdentifier: "goToTakePhoto", sender: self)
         case 2:
-            print("")
+            performSegue(withIdentifier: "goToObjectTracking", sender: self)
         case 3:
-            print("")
+            performSegue(withIdentifier: "goToObjectDetection", sender: self)
         default:
             print("")
         }
