@@ -13,6 +13,20 @@ import CoreML
 
 class RealTimeRecogViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
+    var inputImage: CIImage?
+    
+    var recognizedWords: [String] = []
+    var recognizedRegion: String = ""
+    
+    lazy var ocrRequest: VNCoreMLRequest = {
+        let model = try? VNCoreMLModel(for: OCR().model)
+        return VNCoreMLRequest(model: model!, completionHandler: self.handleClassification)
+    }()
+    
+    lazy var textDetectionRequest: VNDetectTextRectanglesRequest = {
+        return VNDetectTextRectanglesRequest(completionHandler: self.handleDetection)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,5 +78,66 @@ class RealTimeRecogViewController: UIViewController, AVCaptureVideoDataOutputSam
             print(firstObservation.identifier, firstObservation.confidence)
         }
         try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
+    }
+    
+    func handleDetection(request: VNRequest, error: Error?) {
+        guard let observations = request.results as? [VNTextObservation]
+            else {fatalError("unexpected result") }
+        
+        let transform = CGAffineTransform.identity.scaledBy(x: (self.inputImage?.extent.size.width)!, y: (self.inputImage?.extent.size.height)!)
+        
+        self.recognizedWords = []
+        
+        for region in observations {
+            guard let boxesIn = region.characterBoxes else { continue }
+            
+            self.recognizedRegion = ""
+            
+            for box in boxesIn {
+                let realBoundingBox = box.boundingBox.applying(transform)
+                
+                guard (inputImage?.extent.contains(realBoundingBox))! else { print("invalid detected rectangle"); return }
+                
+                // Scale the points to pixels
+                let topLeft = box.topLeft.applying(transform)
+                let topRight = box.topRight.applying(transform)
+                let bottomLeft = box.bottomLeft.applying(transform)
+                let bottomRight = box.bottomRight.applying(transform)
+                
+                // Crop and rectify image
+                let charImage = inputImage?.cropped(to: realBoundingBox).applyingFilter("CIPerspectiveCorrection", parameters: [
+                    "inputTopLeft": CIVector(cgPoint: topLeft),
+                    "inputTopRight": CIVector(cgPoint: topRight),
+                    "inputBottomLeft": CIVector(cgPoint: bottomLeft),
+                    "inputBottomRight": CIVector(cgPoint: bottomRight)
+                    ])
+                
+                ocrRequest.imageCropAndScaleOption = VNImageCropAndScaleOption.scaleFill
+                
+                try? VNImageRequestHandler(ciImage: charImage!, options: [:]).perform([self.ocrRequest])
+            }
+            self.recognizedWords.append(recognizedRegion)
+            
+            DispatchQueue.main.async {
+                print(self.recognizedWords)
+            }
+        }
+    }
+    
+    func handleClassification(request: VNRequest, error: Error?) {
+        guard let observations = request.results as? [VNClassificationObservation] else { fatalError("Unexpected Result")}
+        guard let best = observations.first else { fatalError("Unexpected Result")}
+        self.recognizedRegion = self.recognizedRegion.appending(best.identifier)
+    }
+    
+    func runOCRProcess(ciImage: CIImage) {
+        let handler = VNImageRequestHandler(ciImage: ciImage, options: [:])
+        
+        self.textDetectionRequest.reportCharacterBoxes = true
+        self.textDetectionRequest.preferBackgroundProcessing = false
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            try? handler.perform([self.textDetectionRequest])
+        }
     }
 }

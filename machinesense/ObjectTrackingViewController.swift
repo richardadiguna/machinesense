@@ -31,13 +31,16 @@ class ObjectTrackingViewController: UIViewController, AVCaptureVideoDataOutputSa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DispatchQueue.main.async {
+            self.configureCameraController()
+        }
+        
         self.view.addSubview(highlightView)
         
         let userTapGesture = UITapGestureRecognizer(target: self, action: #selector(userTapped(gesture:)))
         userTapGesture.numberOfTapsRequired = 1
         self.view.addGestureRecognizer(userTapGesture)
         
-        configureCameraController()
         cameraController.captureVideo { (pixelBuffer, error) in
             if let error = error {
                 print(error)
@@ -71,7 +74,7 @@ class ObjectTrackingViewController: UIViewController, AVCaptureVideoDataOutputSa
     }
     
     @objc func userTapped(gesture: UITapGestureRecognizer) {
-        highlightView.frame.size = CGSize(width: 120, height: 120)
+        highlightView.frame.size = CGSize(width: 180, height: 180)
         highlightView.center = gesture.location(in: self.view)
         
         let originalRect = highlightView.frame

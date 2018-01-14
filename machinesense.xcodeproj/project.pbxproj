@@ -14,29 +14,38 @@
 		B93E474F1FF204A800A6C44B /* RealTimeRecogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93E474E1FF204A800A6C44B /* RealTimeRecogViewController.swift */; };
 		B987E9741FECE9430047D3A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B987E9731FECE9430047D3A4 /* GoogleService-Info.plist */; };
 		B99488251FF1444B00FACF64 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B99488241FF1444B00FACF64 /* MobileNet.mlmodel */; };
-		B99542891FF4ADAE00B0358D /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99542881FF4ADAE00B0358D /* ObjectDetectionViewController.swift */; };
+		B99542891FF4ADAE00B0358D /* TextDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99542881FF4ADAE00B0358D /* TextDetectionViewController.swift */; };
 		B995428B1FF4D02000B0358D /* ObjectTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B995428A1FF4D02000B0358D /* ObjectTrackingViewController.swift */; };
 		B99618291FECCEF100BFC7C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99618281FECCEF100BFC7C6 /* AppDelegate.swift */; };
 		B996182B1FECCEF100BFC7C6 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B996182A1FECCEF100BFC7C6 /* SplashViewController.swift */; };
 		B996182E1FECCEF100BFC7C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B996182C1FECCEF100BFC7C6 /* Main.storyboard */; };
 		B99618301FECCEF100BFC7C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B996182F1FECCEF100BFC7C6 /* Assets.xcassets */; };
 		B99618331FECCEF100BFC7C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99618311FECCEF100BFC7C6 /* LaunchScreen.storyboard */; };
+		B999E5E4200B0CA40039B390 /* OCR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B999E5E3200B0CA40039B390 /* OCR.mlmodel */; };
 		B99CE9CB1FF39C8800E080F9 /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99CE9CA1FF39C8800E080F9 /* SelectPhotoViewController.swift */; };
 		B99CE9D11FF39D6C00E080F9 /* Gotham-ThinIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = B99CE9CC1FF39D6A00E080F9 /* Gotham-ThinIta.otf */; };
 		B99CE9D21FF39D6C00E080F9 /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B99CE9CD1FF39D6A00E080F9 /* Gotham-Light.otf */; };
 		B99CE9D31FF39D6C00E080F9 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B99CE9CE1FF39D6B00E080F9 /* Gotham-Medium.otf */; };
 		B99CE9D41FF39D6C00E080F9 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B99CE9CF1FF39D6B00E080F9 /* Gotham-Bold.otf */; };
 		B99CE9D51FF39D6C00E080F9 /* Gotham-MediumIta.otf in Resources */ = {isa = PBXBuildFile; fileRef = B99CE9D01FF39D6B00E080F9 /* Gotham-MediumIta.otf */; };
+		B9BE33881FF7633F007895AC /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BE33871FF7633F007895AC /* History.swift */; };
 		B9C842091FF0E5250031E99D /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C842081FF0E5250031E99D /* Global.swift */; };
 		B9C8420B1FF0F05B0031E99D /* Persistent.realm in Resources */ = {isa = PBXBuildFile; fileRef = B9C8420A1FF0EA280031E99D /* Persistent.realm */; };
 		B9C8420D1FF0F97A0031E99D /* HomeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C8420C1FF0F97A0031E99D /* HomeCategory.swift */; };
 		B9C8420F1FF0F9B30031E99D /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C8420E1FF0F9B30031E99D /* Enum.swift */; };
 		B9C842111FF0FD8C0031E99D /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C842101FF0FD8C0031E99D /* TakePhotoViewController.swift */; };
+		B9CA1BB8200A255700A2AD9E /* CaptureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9CA1BB7200A255700A2AD9E /* CaptureView.xib */; };
+		B9CA1BBA200A26EF00A2AD9E /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CA1BB9200A26EF00A2AD9E /* CaptureView.swift */; };
+		B9CA1BC1200A2A3A00A2AD9E /* TextDetectionCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CA1BC0200A2A3A00A2AD9E /* TextDetectionCaptureViewController.swift */; };
 		B9D9BE261FF11B030030E291 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9BE251FF11B030030E291 /* HistoryViewController.swift */; };
 		B9D9BE281FF11B0F0030E291 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D9BE271FF11B0F0030E291 /* UserViewController.swift */; };
 		B9DD013B1FECEAC6006E4B34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD013A1FECEAC6006E4B34 /* User.swift */; };
 		B9DD013D1FECF1CC006E4B34 /* CustomProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD013C1FECF1CC006E4B34 /* CustomProtocol.swift */; };
 		B9DD013F1FECF259006E4B34 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD013E1FECF259006E4B34 /* Extension.swift */; };
+		B9E02E93200B5BBE00B5CE31 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E02E94200B5BBE00B5CE31 /* TesseractOCR.framework */; };
+		B9E02E96200B5BE100B5CE31 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E02E95200B5BE100B5CE31 /* libstdc++.tbd */; };
+		B9E02EA0200B67FE00B5CE31 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = B9E02E9F200B67FE00B5CE31 /* tessdata */; };
+		B9F1A751200A6A3A0003710F /* PlotTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F1A750200A6A3A0003710F /* PlotTextViewController.swift */; };
 		B9F228D81FF25C3A00EA9394 /* CapturedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F228D71FF25C3A00EA9394 /* CapturedImageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +59,7 @@
 		B93E474E1FF204A800A6C44B /* RealTimeRecogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeRecogViewController.swift; sourceTree = "<group>"; };
 		B987E9731FECE9430047D3A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B99488241FF1444B00FACF64 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
-		B99542881FF4ADAE00B0358D /* ObjectDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewController.swift; sourceTree = "<group>"; };
+		B99542881FF4ADAE00B0358D /* TextDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetectionViewController.swift; sourceTree = "<group>"; };
 		B995428A1FF4D02000B0358D /* ObjectTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectTrackingViewController.swift; sourceTree = "<group>"; };
 		B99618251FECCEF100BFC7C6 /* machinesense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = machinesense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99618281FECCEF100BFC7C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,22 +68,31 @@
 		B996182F1FECCEF100BFC7C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B99618321FECCEF100BFC7C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B99618341FECCEF200BFC7C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B999E5E3200B0CA40039B390 /* OCR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = OCR.mlmodel; sourceTree = "<group>"; };
 		B99CE9CA1FF39C8800E080F9 /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
 		B99CE9CC1FF39D6A00E080F9 /* Gotham-ThinIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-ThinIta.otf"; sourceTree = "<group>"; };
 		B99CE9CD1FF39D6A00E080F9 /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
 		B99CE9CE1FF39D6B00E080F9 /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		B99CE9CF1FF39D6B00E080F9 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
 		B99CE9D01FF39D6B00E080F9 /* Gotham-MediumIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-MediumIta.otf"; sourceTree = "<group>"; };
+		B9BE33871FF7633F007895AC /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		B9C842081FF0E5250031E99D /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		B9C8420A1FF0EA280031E99D /* Persistent.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Persistent.realm; sourceTree = "<group>"; };
 		B9C8420C1FF0F97A0031E99D /* HomeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategory.swift; sourceTree = "<group>"; };
 		B9C8420E1FF0F9B30031E99D /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		B9C842101FF0FD8C0031E99D /* TakePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
+		B9CA1BB7200A255700A2AD9E /* CaptureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaptureView.xib; sourceTree = "<group>"; };
+		B9CA1BB9200A26EF00A2AD9E /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		B9CA1BC0200A2A3A00A2AD9E /* TextDetectionCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetectionCaptureViewController.swift; sourceTree = "<group>"; };
 		B9D9BE251FF11B030030E291 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		B9D9BE271FF11B0F0030E291 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		B9DD013A1FECEAC6006E4B34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B9DD013C1FECF1CC006E4B34 /* CustomProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProtocol.swift; sourceTree = "<group>"; };
 		B9DD013E1FECF259006E4B34 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B9E02E94200B5BBE00B5CE31 /* TesseractOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E02E95200B5BE100B5CE31 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		B9E02E9F200B67FE00B5CE31 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		B9F1A750200A6A3A0003710F /* PlotTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotTextViewController.swift; sourceTree = "<group>"; };
 		B9F228D71FF25C3A00EA9394 /* CapturedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E02E96200B5BE100B5CE31 /* libstdc++.tbd in Frameworks */,
+				B9E02E93200B5BBE00B5CE31 /* TesseractOCR.framework in Frameworks */,
 				6688C193D3759A78DF7DB795 /* Pods_machinesense.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,9 +122,20 @@
 		5681EDF4247F6CC1D3990FD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9E02E95200B5BE100B5CE31 /* libstdc++.tbd */,
+				B9E02E94200B5BBE00B5CE31 /* TesseractOCR.framework */,
 				0C0523F3CBD969AA9A597C76 /* Pods_machinesense.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9026E5A200BA797002EDF6C /* TakePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				B9C842101FF0FD8C0031E99D /* TakePhotoViewController.swift */,
+				B9F228D71FF25C3A00EA9394 /* CapturedImageViewController.swift */,
+			);
+			path = TakePhoto;
 			sourceTree = "<group>";
 		};
 		B996181C1FECCEF100BFC7C6 = {
@@ -129,32 +160,27 @@
 		B99618271FECCEF100BFC7C6 /* machinesense */ = {
 			isa = PBXGroup;
 			children = (
+				B9F1A74F200A68C10003710F /* Custom */,
+				B9CA1BB5200A24A900A2AD9E /* Classes */,
+				B9CA1BBB200A296A00A2AD9E /* User */,
+				B9CA1BBC200A297100A2AD9E /* History */,
+				B9CA1BB6200A250400A2AD9E /* Home */,
+				B9CA1BBD200A299C00A2AD9E /* Splash */,
+				B9CA1BBE200A29D500A2AD9E /* Resource */,
+				B9026E5A200BA797002EDF6C /* TakePhoto */,
+				B9CA1BBF200A2A1500A2AD9E /* TextDetection */,
 				B996182C1FECCEF100BFC7C6 /* Main.storyboard */,
-				B9DD013A1FECEAC6006E4B34 /* User.swift */,
-				B9C8420C1FF0F97A0031E99D /* HomeCategory.swift */,
-				B914326A1FF161AC00B81275 /* CameraController.swift */,
-				B9D9BE251FF11B030030E291 /* HistoryViewController.swift */,
-				B9D9BE271FF11B0F0030E291 /* UserViewController.swift */,
-				B99542881FF4ADAE00B0358D /* ObjectDetectionViewController.swift */,
 				B995428A1FF4D02000B0358D /* ObjectTrackingViewController.swift */,
-				B9F228D71FF25C3A00EA9394 /* CapturedImageViewController.swift */,
 				B99CE9CA1FF39C8800E080F9 /* SelectPhotoViewController.swift */,
-				B9C842101FF0FD8C0031E99D /* TakePhotoViewController.swift */,
-				B92519281FEFC23000928241 /* HomeViewController.swift */,
-				B925192A1FEFC27200928241 /* HomeCell.swift */,
-				B996182A1FECCEF100BFC7C6 /* SplashViewController.swift */,
-				B9DD013E1FECF259006E4B34 /* Extension.swift */,
-				B9C842081FF0E5250031E99D /* Global.swift */,
-				B9C8420E1FF0F9B30031E99D /* Enum.swift */,
-				B9DD013C1FECF1CC006E4B34 /* CustomProtocol.swift */,
 				B93E474E1FF204A800A6C44B /* RealTimeRecogViewController.swift */,
-				B99618281FECCEF100BFC7C6 /* AppDelegate.swift */,
 				B996182F1FECCEF100BFC7C6 /* Assets.xcassets */,
 				B99618311FECCEF100BFC7C6 /* LaunchScreen.storyboard */,
 				B99618341FECCEF200BFC7C6 /* Info.plist */,
 				B987E9731FECE9430047D3A4 /* GoogleService-Info.plist */,
 				B9C8420A1FF0EA280031E99D /* Persistent.realm */,
 				B99488241FF1444B00FACF64 /* MobileNet.mlmodel */,
+				B999E5E3200B0CA40039B390 /* OCR.mlmodel */,
+				B9E02E9F200B67FE00B5CE31 /* tessdata */,
 			);
 			path = machinesense;
 			sourceTree = "<group>";
@@ -169,6 +195,82 @@
 				B99CE9CC1FF39D6A00E080F9 /* Gotham-ThinIta.otf */,
 			);
 			name = "Gotham-Font";
+			sourceTree = "<group>";
+		};
+		B9CA1BB5200A24A900A2AD9E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B9DD013A1FECEAC6006E4B34 /* User.swift */,
+				B9BE33871FF7633F007895AC /* History.swift */,
+				B9C8420C1FF0F97A0031E99D /* HomeCategory.swift */,
+				B914326A1FF161AC00B81275 /* CameraController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B9CA1BB6200A250400A2AD9E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B92519281FEFC23000928241 /* HomeViewController.swift */,
+				B925192A1FEFC27200928241 /* HomeCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B9CA1BBB200A296A00A2AD9E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B9D9BE271FF11B0F0030E291 /* UserViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		B9CA1BBC200A297100A2AD9E /* History */ = {
+			isa = PBXGroup;
+			children = (
+				B9D9BE251FF11B030030E291 /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		B9CA1BBD200A299C00A2AD9E /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B996182A1FECCEF100BFC7C6 /* SplashViewController.swift */,
+			);
+			name = Splash;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B9CA1BBE200A29D500A2AD9E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B99618281FECCEF100BFC7C6 /* AppDelegate.swift */,
+				B9DD013E1FECF259006E4B34 /* Extension.swift */,
+				B9C842081FF0E5250031E99D /* Global.swift */,
+				B9C8420E1FF0F9B30031E99D /* Enum.swift */,
+				B9DD013C1FECF1CC006E4B34 /* CustomProtocol.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B9CA1BBF200A2A1500A2AD9E /* TextDetection */ = {
+			isa = PBXGroup;
+			children = (
+				B99542881FF4ADAE00B0358D /* TextDetectionViewController.swift */,
+				B9CA1BC0200A2A3A00A2AD9E /* TextDetectionCaptureViewController.swift */,
+				B9F1A750200A6A3A0003710F /* PlotTextViewController.swift */,
+			);
+			path = TextDetection;
+			sourceTree = "<group>";
+		};
+		B9F1A74F200A68C10003710F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				B9CA1BB7200A255700A2AD9E /* CaptureView.xib */,
+				B9CA1BB9200A26EF00A2AD9E /* CaptureView.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,8 +340,10 @@
 				B99CE9D31FF39D6C00E080F9 /* Gotham-Medium.otf in Resources */,
 				B99CE9D41FF39D6C00E080F9 /* Gotham-Bold.otf in Resources */,
 				B99CE9D51FF39D6C00E080F9 /* Gotham-MediumIta.otf in Resources */,
+				B9E02EA0200B67FE00B5CE31 /* tessdata in Resources */,
 				B9C8420B1FF0F05B0031E99D /* Persistent.realm in Resources */,
 				B99618331FECCEF100BFC7C6 /* LaunchScreen.storyboard in Resources */,
+				B9CA1BB8200A255700A2AD9E /* CaptureView.xib in Resources */,
 				B987E9741FECE9430047D3A4 /* GoogleService-Info.plist in Resources */,
 				B99618301FECCEF100BFC7C6 /* Assets.xcassets in Resources */,
 				B996182E1FECCEF100BFC7C6 /* Main.storyboard in Resources */,
@@ -261,6 +365,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/TesseractOCRiOS/TesseractOCR.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -271,6 +376,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TesseractOCR.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -322,12 +428,17 @@
 				B9C842091FF0E5250031E99D /* Global.swift in Sources */,
 				B9DD013F1FECF259006E4B34 /* Extension.swift in Sources */,
 				B995428B1FF4D02000B0358D /* ObjectTrackingViewController.swift in Sources */,
+				B9CA1BBA200A26EF00A2AD9E /* CaptureView.swift in Sources */,
 				B9D9BE281FF11B0F0030E291 /* UserViewController.swift in Sources */,
 				B9F228D81FF25C3A00EA9394 /* CapturedImageViewController.swift in Sources */,
-				B99542891FF4ADAE00B0358D /* ObjectDetectionViewController.swift in Sources */,
+				B99542891FF4ADAE00B0358D /* TextDetectionViewController.swift in Sources */,
 				B925192B1FEFC27200928241 /* HomeCell.swift in Sources */,
 				B9D9BE261FF11B030030E291 /* HistoryViewController.swift in Sources */,
+				B9CA1BC1200A2A3A00A2AD9E /* TextDetectionCaptureViewController.swift in Sources */,
+				B9F1A751200A6A3A0003710F /* PlotTextViewController.swift in Sources */,
+				B999E5E4200B0CA40039B390 /* OCR.mlmodel in Sources */,
 				B9DD013D1FECF1CC006E4B34 /* CustomProtocol.swift in Sources */,
+				B9BE33881FF7633F007895AC /* History.swift in Sources */,
 				B996182B1FECCEF100BFC7C6 /* SplashViewController.swift in Sources */,
 				B9C8420D1FF0F97A0031E99D /* HomeCategory.swift in Sources */,
 				B99618291FECCEF100BFC7C6 /* AppDelegate.swift in Sources */,
@@ -480,6 +591,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U24PJ9F5E7;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = machinesense/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IS737.machinesense;
@@ -496,6 +608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U24PJ9F5E7;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = machinesense/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IS737.machinesense;

@@ -57,7 +57,7 @@ class SelectPhotoViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage
         selectedPhotoImageView.image = image
         isSelectedPhoto = true
         picker.dismiss(animated:true, completion: nil)
