@@ -31,9 +31,7 @@ class ObjectTrackingViewController: UIViewController, AVCaptureVideoDataOutputSa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.async {
-            self.configureCameraController()
-        }
+        configureCameraController()
         
         self.view.addSubview(highlightView)
         

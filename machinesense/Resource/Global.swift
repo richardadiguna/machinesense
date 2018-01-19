@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 import Vision
 import CoreML
+import Firebase
 
 func getSomeObjects<T>(object: T.Type) -> [T]? {
     let config = Realm.Configuration(fileURL: Bundle.main.url(forResource: "Persistent", withExtension: "realm"), readOnly: true)
@@ -38,5 +39,28 @@ func showAlertMessage(vc: UIViewController, title: String, message: String) {
     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
     alertController.addAction(defaultAction)
     vc.present(alertController, animated: true, completion: nil)
+}
+
+func showAlertMessage(vc: UIViewController, title: String, message: String, completion: @escaping ()->Void) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let defaultAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+        completion()
+    }
+    alertController.addAction(defaultAction)
+    vc.present(alertController, animated: true, completion: nil)
+}
+
+func randomString(length: Int) -> String {
+    let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    let len = UInt32(letters.length)
+    
+    var randomString = ""
+    
+    for _ in 0 ..< length {
+        let rand = arc4random_uniform(len)
+        var nextChar = letters.character(at: Int(rand))
+        randomString += NSString(characters: &nextChar, length: 1) as String
+    }
+    return randomString
 }
 

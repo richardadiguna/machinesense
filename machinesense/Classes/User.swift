@@ -55,6 +55,10 @@ class User {
         }
     }
     
+    static var uid: String {
+        return Auth.auth().currentUser?.uid ?? ""
+    }
+    
     public static func loginUser() {
         
     }

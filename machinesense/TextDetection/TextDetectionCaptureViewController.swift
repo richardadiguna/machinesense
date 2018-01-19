@@ -68,7 +68,7 @@ extension TextDetectionCaptureViewController: CaptureViewDelegate {
                 self.capturedData = data
                 try? VNImageRequestHandler(data: data, options: [:]).perform(self.requests!)
                 
-                self.performSegue(withIdentifier: "goToPlotTextSegue", sender: self)
+                self.performSegue(withIdentifier: "goToPlotTextSegue", sender: self)    
             }
         }
     }

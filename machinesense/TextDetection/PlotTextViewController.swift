@@ -8,8 +8,8 @@
 
 import UIKit
 import Vision
-import CoreML
 import TesseractOCR
+import SVProgressHUD
 
 class PlotTextViewController: UIViewController {
     
@@ -18,36 +18,21 @@ class PlotTextViewController: UIViewController {
     var observationResult: [VNTextObservation?]?
     var capturedData: Data?
     var capturedImage: UIImage?
-
-    var inputImage: CIImage?
     
     var recognizedWords: [String] = []
     var recognizedRegion: String = ""
     
     var tesseract: G8Tesseract!
     
+    var isProcessOCR: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureTesseract()
-    }
-    
-    func configureTesseract() {
-        tesseract = G8Tesseract(language: "eng")
-        tesseract.engineMode = .tesseractCubeCombined
-        tesseract.pageSegmentationMode = .auto
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
         if capturedData != nil {
             capturedImage = convertDataToImage(data: capturedData)
-            inputImage = convertDataToCIImage(data: capturedData)
-            
             capturedImageView.image = capturedImage
-        
-            if let observationResult = observationResult {
-                plotTextOnPhoto(observationResult: observationResult)
-            }
+            plotTextOnPhoto(observationResult: observationResult)
         }
     }
     
@@ -65,30 +50,34 @@ class PlotTextViewController: UIViewController {
     }
 
     @IBAction func nextAction(_ sender: Any) {
-        if capturedImage != nil {
-            tesseract.image = capturedImage?.g8_blackAndWhite()
-            tesseract.recognize()
-            print(tesseract.recognizedText)
+        guard let detectedText = runOCRProcess(capturedData: capturedData) else { return }
+        
+        self.performSegue(withIdentifier: "unwindToTextDetectionViewController", sender: detectedText)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "unwindToTextDetectionViewController" {
+            let vc = segue.destination as! TextDetectionViewController
+            let sender = sender as! String
+            vc.detectedText = sender
         }
     }
     
     func convertDataToImage(data: Data?) -> UIImage? {
         guard let data = data else { return nil }
-        
         let image = UIImage(data: data)
-        
         return image
     }
     
-    func convertDataToCIImage(data: Data?) -> CIImage? {
-        guard let data = data else { return CIImage() }
-        
-        let ciImage = CIImage(data: data)
-        
-        return ciImage
+    func configureTesseract() {
+        tesseract = G8Tesseract(language: "eng")
+        tesseract.engineMode = .tesseractCubeCombined
+        tesseract.pageSegmentationMode = .auto
     }
     
-    func plotTextOnPhoto(observationResult: [VNTextObservation?]) {
+    func plotTextOnPhoto(observationResult: [VNTextObservation?]?) {
+        guard let observationResult = observationResult else { return }
+        
         DispatchQueue.main.async {
             self.capturedImageView.layer.sublayers?.removeSubrange(1...)
             
@@ -140,6 +129,14 @@ class PlotTextViewController: UIViewController {
 
 extension PlotTextViewController {
     
-    func runOCRProcess(observationResult: [VNTextObservation?]) {
+    func runOCRProcess(capturedData: Data?) -> String? {
+        configureTesseract()
+        let image = convertDataToImage(data: capturedData)
+        tesseract.image = image?.g8_blackAndWhite()
+        tesseract.recognize()
+        
+        let detectedText = tesseract.recognizedText
+        isProcessOCR = false
+        return detectedText ?? ""
     }
 }

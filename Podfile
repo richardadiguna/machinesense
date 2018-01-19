@@ -13,4 +13,5 @@ pod 'Firebase/Database'
 pod 'Firebase/Core'
 pod 'SVProgressHUD'
 pod 'TesseractOCRiOS'
+pod 'MBProgressHUD'
 end

@@ -230,10 +230,6 @@ class CameraController: NSObject {
         
         captureSession.commitConfiguration()
     }
-    
-    deinit {
-        print("Deinitialize CameraController")
-    }
 }
 
 extension CameraController: AVCapturePhotoCaptureDelegate {

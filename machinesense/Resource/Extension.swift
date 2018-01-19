@@ -34,3 +34,28 @@ extension Results {
     }
     
 }
+
+extension UIImage {
+    
+    func resizeImage(newSize: CGSize) -> UIImage {
+        let widthRatio = newSize.width / size.width
+        let heighRatio = newSize.height / size.height
+        
+        var newSize: CGSize {
+            if widthRatio > heighRatio {
+                return CGSize(width: size.width * heighRatio, height: size.height * heighRatio)
+            } else {
+                return CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
+            }
+        }
+        
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        return newImage ?? UIImage()
+    }
+    
+}

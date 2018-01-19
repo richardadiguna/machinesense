@@ -12,6 +12,8 @@
 		B92519291FEFC23000928241 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92519281FEFC23000928241 /* HomeViewController.swift */; };
 		B925192B1FEFC27200928241 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B925192A1FEFC27200928241 /* HomeCell.swift */; };
 		B93E474F1FF204A800A6C44B /* RealTimeRecogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93E474E1FF204A800A6C44B /* RealTimeRecogViewController.swift */; };
+		B94807CD2011F62E00C6206F /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94807CC2011F62E00C6206F /* HistoryCell.swift */; };
+		B94807CF201217EF00C6206F /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94807CE201217EF00C6206F /* HistoryDetailViewController.swift */; };
 		B987E9741FECE9430047D3A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B987E9731FECE9430047D3A4 /* GoogleService-Info.plist */; };
 		B99488251FF1444B00FACF64 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B99488241FF1444B00FACF64 /* MobileNet.mlmodel */; };
 		B99542891FF4ADAE00B0358D /* TextDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99542881FF4ADAE00B0358D /* TextDetectionViewController.swift */; };
@@ -57,6 +59,8 @@
 		B92519281FEFC23000928241 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B925192A1FEFC27200928241 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		B93E474E1FF204A800A6C44B /* RealTimeRecogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeRecogViewController.swift; sourceTree = "<group>"; };
+		B94807CC2011F62E00C6206F /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		B94807CE201217EF00C6206F /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
 		B987E9731FECE9430047D3A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B99488241FF1444B00FACF64 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		B99542881FF4ADAE00B0358D /* TextDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetectionViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				B9D9BE251FF11B030030E291 /* HistoryViewController.swift */,
+				B94807CC2011F62E00C6206F /* HistoryCell.swift */,
+				B94807CE201217EF00C6206F /* HistoryDetailViewController.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-machinesense/Pods-machinesense-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -373,6 +380,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -439,8 +447,10 @@
 				B999E5E4200B0CA40039B390 /* OCR.mlmodel in Sources */,
 				B9DD013D1FECF1CC006E4B34 /* CustomProtocol.swift in Sources */,
 				B9BE33881FF7633F007895AC /* History.swift in Sources */,
+				B94807CF201217EF00C6206F /* HistoryDetailViewController.swift in Sources */,
 				B996182B1FECCEF100BFC7C6 /* SplashViewController.swift in Sources */,
 				B9C8420D1FF0F97A0031E99D /* HomeCategory.swift in Sources */,
+				B94807CD2011F62E00C6206F /* HistoryCell.swift in Sources */,
 				B99618291FECCEF100BFC7C6 /* AppDelegate.swift in Sources */,
 				B9DD013B1FECEAC6006E4B34 /* User.swift in Sources */,
 				B93E474F1FF204A800A6C44B /* RealTimeRecogViewController.swift in Sources */,

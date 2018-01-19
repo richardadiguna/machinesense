@@ -9,6 +9,7 @@
 import UIKit
 import Vision
 import Firebase
+import MBProgressHUD
 
 class CapturedImageViewController: UIViewController {
 
@@ -39,6 +40,29 @@ class CapturedImageViewController: UIViewController {
     }
     
     @IBAction func saveResult(_ sender: Any) {
+        DispatchQueue.main.async {
+            let loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
+            loadingNotification.mode = MBProgressHUDMode.indeterminate
+            loadingNotification.label.text = "Uploading..."
+        }
+        
+        guard let capturedImage = capturedImageView.image else { print("Failed");return }
+        let uid = User.uid
+        
+        let addedDateTime = Date()
+        let result = resultLabel.text
+        let type = CategoryType.TakePhoto.rawValue
+        
+        let history = History(addedDateTime: addedDateTime, type: type, result: result!)
+        History.saveHistoryWithImage(history, image: capturedImage, uid: uid) {
+            DispatchQueue.main.async {
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+            
+            showAlertMessage(vc: self, title: "Uploading Complete", message: "Your Data has been stored to the cloud", completion: {
+                self.dismiss(animated: true, completion: nil)
+            })
+        }
     }
     
     
