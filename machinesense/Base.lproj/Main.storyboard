@@ -17,12 +17,18 @@
         <array key="Gotham-Book.otf">
             <string>Gotham-Book</string>
         </array>
+        <array key="Gotham-Light.otf">
+            <string>Gotham-Light</string>
+        </array>
+        <array key="Gotham-Medium.otf">
+            <string>Gotham-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SplashViewController" customModule="machinesense" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="BYZ-38-t0r" customClass="SplashViewController" customModule="machinesense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -555,7 +561,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="vX9-zz-2QS"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -612,12 +618,12 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="398"/>
                                 <color key="backgroundColor" red="0.71518083759999995" green="0.71518083759999995" blue="0.71518083759999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w56-dB-NeC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w56-dB-NeC">
                                 <rect key="frame" x="16" y="483" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="JmP-2N-hFZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <fontDescription key="fontDescription" name="Gotham-Light" family="Gotham" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1152,14 +1158,80 @@
                     <view key="view" contentMode="scaleToFill" id="Fq1-fO-kht">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XP7-l6-Ruk">
+                                <rect key="frame" x="0.0" y="86" width="320" height="433"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserCell" id="OlM-eP-8PJ" customClass="UserCell" customModule="machinesense" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OlM-eP-8PJ" id="z1e-uO-bru">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5K-ok-Ase">
+                                                    <rect key="frame" x="24" y="12" width="249" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="lXh-O7-2aG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Gotham-Medium" family="Gotham" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="7zo-b0-WH5">
+                                                    <rect key="frame" x="289" y="13" width="10" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="10" id="7Yi-Ee-Pjr"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7zo-b0-WH5" firstAttribute="top" secondItem="z1e-uO-bru" secondAttribute="topMargin" constant="2" id="5hG-XM-xdv"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7zo-b0-WH5" secondAttribute="trailing" constant="6" id="6Hb-2F-l8E"/>
+                                                <constraint firstItem="G5K-ok-Ase" firstAttribute="top" secondItem="z1e-uO-bru" secondAttribute="topMargin" constant="1" id="9PT-Nh-tyf"/>
+                                                <constraint firstItem="7zo-b0-WH5" firstAttribute="leading" secondItem="G5K-ok-Ase" secondAttribute="trailing" constant="16" id="O9c-as-YG8"/>
+                                                <constraint firstItem="G5K-ok-Ase" firstAttribute="leading" secondItem="z1e-uO-bru" secondAttribute="leadingMargin" constant="9" id="aSX-8a-BNA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailImageView" destination="7zo-b0-WH5" id="vRc-sx-UZW"/>
+                                            <outlet property="userCellTitleLabel" destination="G5K-ok-Ase" id="YeZ-1U-Mzk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="richardadiguna17@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gy-OR-xc2">
+                                <rect key="frame" x="16" y="32" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="JMW-fn-vFH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1gy-OR-xc2" firstAttribute="top" secondItem="0ZO-jY-USU" secondAttribute="top" constant="12" id="Am7-lR-2SJ"/>
+                            <constraint firstItem="XP7-l6-Ruk" firstAttribute="trailing" secondItem="0ZO-jY-USU" secondAttribute="trailing" id="FED-HU-LK0"/>
+                            <constraint firstItem="XP7-l6-Ruk" firstAttribute="leading" secondItem="0ZO-jY-USU" secondAttribute="leading" id="cEh-fM-lz6"/>
+                            <constraint firstItem="XP7-l6-Ruk" firstAttribute="top" secondItem="1gy-OR-xc2" secondAttribute="bottom" constant="33" id="caj-vt-9KB"/>
+                            <constraint firstItem="XP7-l6-Ruk" firstAttribute="bottom" secondItem="0ZO-jY-USU" secondAttribute="bottom" id="hxj-ye-2Vi"/>
+                            <constraint firstItem="0ZO-jY-USU" firstAttribute="trailing" secondItem="1gy-OR-xc2" secondAttribute="trailing" constant="16" id="nYg-CI-Iu7"/>
+                            <constraint firstItem="1gy-OR-xc2" firstAttribute="leading" secondItem="0ZO-jY-USU" secondAttribute="leading" constant="16" id="yXL-uV-yaF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0ZO-jY-USU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" id="vuB-4w-O5R"/>
+                    <connections>
+                        <outlet property="tableView" destination="XP7-l6-Ruk" id="PqR-zo-Fu1"/>
+                        <outlet property="userEmailLabel" destination="1gy-OR-xc2" id="sFd-l3-Yba"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BxU-Xv-oUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2558" y="543"/>
+            <point key="canvasLocation" x="2557.5" y="542.95774647887322"/>
         </scene>
         <!--Captured Image View Controller-->
         <scene sceneID="B0X-9C-9pW">

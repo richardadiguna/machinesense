@@ -63,8 +63,15 @@ class User {
         
     }
     
-    public static func logoutUser() {
-        
+    public static func logoutUser(completion: @escaping ()->Void) {
+        if Auth.auth().currentUser != nil {
+            do {
+                try Auth.auth().signOut()
+                completion()
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        }
     }
     
 }
